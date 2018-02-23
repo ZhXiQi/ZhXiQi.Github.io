@@ -1,23 +1,23 @@
 # Basic
-title: 周信
+title: 金明
 subtitle: 个人站
 description: 欢迎来到我的个人站~
 # 头像里面的标题
-avatarTitle: Ace Z.Swift
+avatarTitle: Zh.XiQi
 # 头像里面的描述
 avatarDesc: 爱IT，爱折腾
-url: "https://aceswift.github.io/"
+url: "https://ZhXiQi.github.io/"
 
 # Comment
 comment:
-    # disqus: Ace Z.Swift
-    duoshuo: Ace Z.Swift 
+    # disqus: Zh.XiQi
+    duoshuo: Zh.XiQi 
 
 # Social
 social:
     weibo: 脏醒铅 
-    github: AceSwift
-    twitter: AceZSwift
+    github: ZhXiQi
+    twitter: ZhXiQi
     mail: lrv@live.cn
     
 

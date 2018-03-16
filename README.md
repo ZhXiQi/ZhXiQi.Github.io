@@ -1,6 +1,6 @@
 # Zh.XiQi
 
-[ZhXiQi](https://github.com) 是我的Github，在这里将开启我的奋斗之旅.
+[ZhXiQi](https://github.com/ZhXiQi) 是我的Github，在这里将开启我的奋斗之旅.
 
 
 

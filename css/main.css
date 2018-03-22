@@ -113,9 +113,10 @@ h1 {
 	letter-spacing: .05em; 
 }
 
-.originh2 h2{
+.originh2 {
 	font-size: 1.7em;
 }
+
 h2 {
   font-size: 1.7em; 
   text-indent: 4px; 

@@ -114,13 +114,21 @@ h1 {
 }
 
 .originh2 {
-	font-size: 1.5em;
-	margin-top: 1.0em;
-	margin-bottom: .5em;
-	font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-weight: lighter;
-	color: #333333;
-	-webkit-font-smoothing: antialiased;
+	  font-size: 1.5em;
+    text-indent: 4px;
+    border-radius: 4px;
+    padding: 0px;
+    margin-bottom: .5em;
+    margin-top: 1.0em;
+    background:#B9D3EE;
+  /*0px right, 5px botton, 5px fuzzy*/
+    box-shadow: 0px;
+    border-left: 0px;
+    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-weight: lighter;
+    color: #333333;
+    -webkit-font-smoothing: antialiased;
+    position:relative;
 }
 
 h2 {

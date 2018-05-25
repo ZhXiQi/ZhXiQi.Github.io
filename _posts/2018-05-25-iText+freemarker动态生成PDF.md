@@ -11,7 +11,7 @@ tag: iText、Freemarker、JFreeChart
     
 ![iText&Freemarker](/images/posts/iText+Freemarker+JFreeChart/iText+Freemarker.jpg)
 
-## 1、iText：
+#### 1、iText：
 
 ![iText](/images/posts/iText+Freemarker+JFreeChart/iText.jpg)
 
@@ -39,7 +39,7 @@ tag: iText、Freemarker、JFreeChart
 
 [这里](http://rensanning.iteye.com/blog/1538689)是一个不错的学习教程!!
 
-## 2、freemarker
+### 2、freemarker
 
     freemarker模板语法类似HTML的ftl文件，但是其与纯HTML还是有很大的区别的，比如ftl文件无法使用内置的js函数，不知道复杂的css布局等，但是ftl有他自己的內建函数库，可以满足大部分的需求
 ![ftl](/images/posts/iText+Freemarker+JFreeChart/ftl.jpg)
@@ -47,11 +47,11 @@ tag: iText、Freemarker、JFreeChart
 
 详情可访问[这里](http://www.kerneler.com/freemarker2.3.23/ref_builtins_string.html)
 
-## 3、JFreeChart
+### 3、JFreeChart
 
 JFreeChart 是开放源代码站点 SourceForge.net 上的一个 JAVA 项目，它主要用来各种各样的图表，这些图表包括：饼图、柱状图 ( 普通柱状图以及堆栈柱状图 )、线图、区域图、分布图、混合图、甘特图以及一些仪表盘等等。这些不同式样的图表基本上可以满足目前的要求。
 
-![JFreeChart](/images/posts/iText+Freemarker+JFreeChart/JfreeChart.png)
+![JFreeChart](/images/posts/iText+Freemarker+JFreeChart/JFreeChart.png)
 
 JFreeChart中几个核心的对象类：
 

@@ -13,6 +13,8 @@ tag: iText、Freemarker、JFreeChart
 
 ### 1、iText：
 
+iText是著名的开放源码的站点sourceforge一个项目，是用于生成PDF文档的一个java类库。通过iText不仅可以生成PDF或rtf的文档，而且可以将XML、Html等文件转化为PDF文件。 iText的安装非常方便，下载iText.jar文件后，只需要在系统的CLASSPATH中加入iText.jar的路径，在程序中就可以使用iText类库了。
+
 ![iText](/images/posts/iText+Freemarker+JFreeChart/iText.jpg)
 
 包：com.itextpdf.text
@@ -37,9 +39,25 @@ tag: iText、Freemarker、JFreeChart
 
 * Chunk(块)：块是能被添加到文档的文本的最小单位，块可以用于构建基础元素，如：短句、段落、锚点等，块是一个有确定字体的字符串，要添加块到文档中时，其他所有布局变量均要被定义
 
+### iText的需求分析
+
+一般情况下，iText使用在有以下一个要求的项目中：
+
+* 内容无法提前利用：取决于用户的输入或实时的数据库信息。
+
+* 由于内容，页面过多，PDF文档不能手动生成。
+
+* 文档需在无人参与，批处理模式下自动创建。
+
+* 内容被定制或个性化；例如，终端客户的名字需要标记在大量的页面上。
+
 [这里](http://rensanning.iteye.com/blog/1538689)是一个不错的学习教程!!
 
 ### 2、freemarker
+
+FreeMarker是一款模板引擎：即一种基于模板和要改变的数据，并用来生成输出文本（HTML网页、电子邮件、配置文件、源代码等）的通用工具。它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。
+
+FreeMarker是免费的，基于Apache许可证2.0版本发布。其模板编写为FreeMarker Template Language（FTL），属于简单、专用的语言。需要准备数据在真实编程语言中来显示，比如数据库查询和业务运算，之后模板显示已经准备好的数据。在模板中，主要用于如何展现数据，	而在模板之外注意于要展示什么数据.
 
 freemarker模板语法类似HTML的ftl文件，但是其与纯HTML还是有很大的区别的，比如ftl文件无法使用内置的js函数，不支持复杂的css布局等，但是ftl有他自己的內建函数库，可以满足大部分的需求
 

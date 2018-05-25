@@ -11,7 +11,7 @@ tag: iText、Freemarker、JFreeChart
     
 ![iText&Freemarker](/images/posts/iText+Freemarker+JFreeChart/iText+Freemarker.jpg)
 
-#### 1、iText：
+### 1、iText：
 
 ![iText](/images/posts/iText+Freemarker+JFreeChart/iText.jpg)
 
@@ -41,7 +41,8 @@ tag: iText、Freemarker、JFreeChart
 
 ### 2、freemarker
 
-    freemarker模板语法类似HTML的ftl文件，但是其与纯HTML还是有很大的区别的，比如ftl文件无法使用内置的js函数，不知道复杂的css布局等，但是ftl有他自己的內建函数库，可以满足大部分的需求
+freemarker模板语法类似HTML的ftl文件，但是其与纯HTML还是有很大的区别的，比如ftl文件无法使用内置的js函数，不支持复杂的css布局等，但是ftl有他自己的內建函数库，可以满足大部分的需求
+
 ![ftl](/images/posts/iText+Freemarker+JFreeChart/ftl.jpg)
 ![freemarker](/images/posts/iText+Freemarker+JFreeChart/freemarker.png)
 

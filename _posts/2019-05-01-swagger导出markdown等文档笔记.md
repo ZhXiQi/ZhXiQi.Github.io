@@ -118,7 +118,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 // 自行修改为自己的包路径
-                .apis(RequestHandlerSelectors.basePackage("cn.hyperchain.pboc.controller"))
+                .apis(RequestHandlerSelectors.basePackage("cn.xxx.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());

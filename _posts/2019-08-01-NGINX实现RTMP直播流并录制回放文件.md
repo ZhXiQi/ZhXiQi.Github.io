@@ -57,21 +57,39 @@ rtmp {	#RTMP协议，与HTTP协议同一级
       record_path /Users/ZhXiQi/Desktop/video;
       #每次录制是否唯一文件名，会以 房间号-时间戳 为名称，房间号由推流端指定，跟在 live后面，如 live/room1
       record_unique on;
+      #将直播录制的视频转为mp4格式，主要为FFmpeg指令的使用，未验证
+      #exec_record_done 为录制完成后执行的指令
+      exec_record_done ffmpeg -y -i $path -acodec libmp3lame -ar 44100 -ac 1 -vcodec libx264 $path/$basename.mp4;
 
-			#注意，以下两个设置必须保证配置的url能请求的通，否则会导致推流失败
+      #注意，以下两个设置必须保证配置的url能请求的通，否则会导致推流失败
       #推流开始回调，后面IP为后端项目请求地址
       on_publish http://127.0.0.1:9090/rtmp/hello;
       #推流结束回调，推流结束，通知服务端进行相应的操作
       on_done http://127.0.0.1:9090/rtmp/hello;
     }
+		#hls直播协议
     application hls{
       live on;
       hls on;
       hls_path /Users/ZhXiQi/Downloads;
       hls_fragment 1s;
     }
+		#回看应用，设置此项后，后续可以通过支持rtmp协议的播放器来播放此路径下的文件
+		application vod {
+				#回看
+        play /home/hyperchain/video;
+    }
   }
 }
+/**
+其中：
+$name 　　		推流名称				 (room)
+$path 　　		记录文件路径			(/Users/ZhXiQi/Desktop/video/room-1389499351.flv)
+$filename 　　省略目录的路径　　	(room-1389499351.flv)
+$basename 　　扩展名省略的文件名	(room-1389499351)
+$dirname 　　	目录路径　　 			(/Users/ZhXiQi/Desktop/video)
+更具体参数可查询官方文档
+*/
 ```
 
 ### 4.检查并启动nginx
@@ -88,9 +106,9 @@ rtmp {	#RTMP协议，与HTTP协议同一级
 
 可以使用 ffmpeg来进行推流测试
 
-`ffmpeg -re -i /Users/ZhXiQi/Desktop/1564711041674615.mp4 -vcodec libx264 -acodec aac -strict -2 -f flv rtmp://localhost:1935/rtmplive/room4`
+`ffmpeg -re -i /Users/ZhXiQi/Desktop/1564711041674615.mp4 -vcodec libx264 -acodec aac -strict -2 -f flv rtmp://localhost:1935/rtmplive/room?username=ZhXiQi&password=123`
 
-如果录制文件夹下生成了刚才推送的内容，则表明此次安装成功
+如果录制文件夹下生成了刚才推送的内容，则表明此次安装成功，其中`room`为房间号，可以任意指定，后面跟的参数可以在 `on_publish` 或者 `on_done` 所调用的后台服务中通过 `request.getParameter("username")` 这种方式获取数据，以达到鉴权的效果
 
 ### 6.待完善
 

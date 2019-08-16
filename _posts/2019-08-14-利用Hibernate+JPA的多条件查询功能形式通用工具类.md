@@ -97,7 +97,7 @@ public class BusinessUtil<T> {
 
     /**
      * 
-     * @param params 参数列表
+     * @param params 参数列表,like匹配的时候，需要自行决定是前置模糊还是后置模糊还是都模糊,这样可以自己判断是否前置模糊放弃索引
      * @return
      */
     public Specification<T> getSpec(List<QueryVO> params){
@@ -121,7 +121,7 @@ public class BusinessUtil<T> {
                                 }
                                 break;
                             case like:
-                                predicateList.add(criteriaBuilder.like(root.get(key).as(String.class),"%"+value+"%"));
+                                predicateList.add(criteriaBuilder.like(root.get(key).as(String.class),value.toString()));
                                 break;
                             case ge:
                                 if (value instanceof Number){

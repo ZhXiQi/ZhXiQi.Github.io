@@ -67,16 +67,16 @@ rtmp {	#RTMP协议，与HTTP协议同一级
       #推流结束回调，推流结束，通知服务端进行相应的操作
       on_done http://127.0.0.1:9090/rtmp/hello;
     }
-		#hls直播协议
+    #hls直播协议
     application hls{
       live on;
       hls on;
       hls_path /Users/ZhXiQi/Downloads;
       hls_fragment 1s;
     }
-		#回看应用，设置此项后，后续可以通过支持rtmp协议的播放器来播放此路径下的文件
-		application vod {
-				#回看
+    #回看应用，设置此项后，后续可以通过支持rtmp协议的播放器来播放此路径下的文件
+    application vod {
+        #回看
         play /home/hyperchain/video;
     }
   }

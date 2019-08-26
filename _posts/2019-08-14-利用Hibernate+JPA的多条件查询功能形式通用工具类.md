@@ -125,22 +125,22 @@ public class BusinessUtil<T> {
                                 break;
                             case ge:
                                 if (value instanceof Number){
-                                    predicateList.add(criteriaBuilder.ge(root.get(key), (Number) value));
+                                    predicateList.add(criteriaBuilder.ge(root.get(key).as(Number.class), (Number) value));
                                 }
                                 break;
                             case gt:
                                 if (value instanceof Number){
-                                    predicateList.add(criteriaBuilder.gt(root.get(key), (Number) value));
+                                    predicateList.add(criteriaBuilder.gt(root.get(key).as(Number.class), (Number) value));
                                 }
                                 break;
                             case le:
                                 if (value instanceof Number){
-                                    predicateList.add(criteriaBuilder.le(root.get(key), (Number) value));
+                                    predicateList.add(criteriaBuilder.le(root.get(key).as(Number.class), (Number) value));
                                 }
                                 break;
                             case lt:
                                 if (value instanceof Number){
-                                    predicateList.add(criteriaBuilder.lt(root.get(key), (Number) value));
+                                    predicateList.add(criteriaBuilder.lt(root.get(key).as(Number.class), (Number) value));
                                 }
                                 break;
                             case nq:

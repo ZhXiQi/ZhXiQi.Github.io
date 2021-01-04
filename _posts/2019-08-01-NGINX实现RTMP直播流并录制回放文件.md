@@ -51,15 +51,17 @@ rtmp {	#RTMP协议，与HTTP协议同一级
       #为rtmp引擎设置最大连接数，默认off
       max_connections 1024;
       
-      #开启录制功能，会将直播的信息保存成一个flv文件
+      #开启录制功能，会将直播的信息默认保存成一个flv文件
       record all;
       #视频录制存放目录,注意 因为需要生成文件，所以需要nginx以某种可以让其他服务读写文件的用户权限启动
       record_path /Users/ZhXiQi/Desktop/video;
       #每次录制是否唯一文件名，会以 房间号-时间戳 为名称，房间号由推流端指定，跟在 live后面，如 live/room1
       record_unique on;
-      #将直播录制的视频转为mp4格式，主要为FFmpeg指令的使用，未验证
-      #exec_record_done 为录制完成后执行的指令
-      exec_record_done ffmpeg -y -i $path -acodec libmp3lame -ar 44100 -ac 1 -vcodec libx264 $path/$basename.mp4;
+      #设置录制文件名，默认为 flv 
+      record_suffix _%d%m%Y_%H%M%S.mp4;
+      
+      #指定录制结束时触发的带有参数的外部命令
+      #exec_record_done ffmpeg -y -i $path -acodec libmp3lame -ar 44100 -ac 1 -vcodec libx264 $path/$basename.mp4;
 
       #注意，以下两个设置必须保证配置的url能请求的通，否则会导致推流失败
       #推流开始回调，后面IP为后端项目请求地址
@@ -110,7 +112,11 @@ $dirname 　　	目录路径　　 			(/Users/ZhXiQi/Desktop/video)
 
 如果录制文件夹下生成了刚才推送的内容，则表明此次安装成功，其中`room`为房间号，可以任意指定，后面跟的参数可以在 `on_publish` 或者 `on_done` 所调用的后台服务中通过 `request.getParameter("username")` 这种方式获取数据，以达到鉴权的效果
 
-### 6.待完善
+### 6.观看直播
+
+可以使用 **VLC** 或者 Mac下的**IINA**来进行直播观看，例如直播地址是 `192.168.10.100:1935/live/room1`，那么观看地址直接输入 `rtmp://192.168.10.100:1935/live/room1`,其中 `room1`是开始直播后生成的房间号。
+
+### 7.待完善
 
 使用过程中，发现iOS手机端如果使用的是横屏录屏的话，nginx直播录制的文件分辨率依旧是竖屏，导致界面压缩，尚未明确分辨率设置是否由此nginx方设置还是由客户端推流的时候进行设置
 
